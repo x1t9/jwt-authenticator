@@ -1,0 +1,27 @@
+# Dependency directories
+/vendor/
+/node_modules/
+/admin/ui/node_modules/
+# Build artifacts (keep dist for plugin deployment)
+# /admin/ui/dist/
+# IDE and OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+# PHP
+*.log
+error_log
+# Test coverage
+/coverage/
+/.phpunit.cache/
+/tests/coverage/
+# Composer dev tooling
+# Environment
+.env
+.env.local
+# Zip artifacts
+*.zip

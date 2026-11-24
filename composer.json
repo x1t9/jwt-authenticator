@@ -1,0 +1,22 @@
+{
+    "name": "x1t9/jwt-authenticator",
+    "description": "Complete JWT + Firebase + OAuth 2.0 + API Key authentication for the WordPress REST API. MIT licensed.",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        { "name": "x1t9" }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "firebase/php-jwt": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "vendor-dir": "includes/vendor"
+    }
+}

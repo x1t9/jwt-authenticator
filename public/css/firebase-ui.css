@@ -1,0 +1,214 @@
+/**
+ * Firebase UI Styles — JWT Authenticator
+ *
+ * Compact, neutral, Bootstrap-consistent styling for the front-end Firebase
+ * login / register / social-login shortcodes. Self-contained (no Bootstrap
+ * dependency on the public site) so it never clashes with the active theme,
+ * while matching the admin dashboard's neutral slate palette.
+ *
+ * MIT License — Copyright (c) 2024 x1t9
+ */
+
+.jwt-auth-firebase-login,
+.jwt-auth-firebase-register,
+.jwt-auth-social-login {
+	--jwt-primary: #475569;
+	--jwt-primary-hover: #3a475a;
+	--jwt-border: #e4e7eb;
+	--jwt-text: #2b2f36;
+	--jwt-muted: #6b7280;
+	--jwt-error-bg: #f8eeed;
+	--jwt-error-border: #eed2d0;
+	--jwt-error-text: #8a3533;
+	--jwt-radius: 8px;
+	--jwt-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+	font-family: var(--jwt-font);
+	color: var(--jwt-text);
+	max-width: 420px;
+	margin: 0 auto 24px;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid var(--jwt-border);
+	border-radius: var(--jwt-radius);
+	box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+	box-sizing: border-box;
+}
+
+/* ── Fields ─────────────────────────────────────────────────────────────── */
+.jwt-auth-field {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-bottom: 14px;
+}
+
+.jwt-auth-field label {
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: var(--jwt-text);
+}
+
+.jwt-auth-field input {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--jwt-border);
+	border-radius: 6px;
+	background: #fff;
+	color: var(--jwt-text);
+	font: inherit;
+	font-size: 0.875rem;
+	outline: none;
+	transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.jwt-auth-field input::placeholder {
+	color: #9aa1ab;
+}
+
+.jwt-auth-field input:focus {
+	border-color: var(--jwt-primary);
+	box-shadow: 0 0 0 0.1875rem rgba(71, 85, 105, 0.16);
+}
+
+/* ── Primary button ─────────────────────────────────────────────────────── */
+.jwt-auth-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.5625rem 1rem;
+	border: 1px solid transparent;
+	border-radius: var(--jwt-radius);
+	font: inherit;
+	font-size: 0.875rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.12s ease, opacity 0.12s ease;
+}
+
+.jwt-auth-btn:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
+.jwt-auth-btn-primary {
+	background: var(--jwt-primary);
+	color: #fff;
+	margin-top: 4px;
+}
+
+.jwt-auth-btn-primary:hover:not(:disabled) {
+	background: var(--jwt-primary-hover);
+}
+
+/* ── Social buttons (neutral outline) ──────────────────────────────────── */
+.jwt-auth-social-login {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.jwt-auth-social-btn {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.5625rem 1rem;
+	border: 1px solid var(--jwt-border);
+	border-radius: var(--jwt-radius);
+	background: #fff;
+	color: var(--jwt-text);
+	font: inherit;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.jwt-auth-social-btn:hover:not(:disabled) {
+	background: #f6f7f8;
+	border-color: #d4dae2;
+}
+
+.jwt-auth-social-btn:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.jwt-auth-social-icon {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.jwt-auth-social-icon svg {
+	display: block;
+}
+
+/* Icon-only variant */
+.jwt-auth-style-icon .jwt-auth-social-btn {
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	justify-content: center;
+}
+
+.jwt-auth-style-icon .jwt-auth-social-label {
+	display: none;
+}
+
+.jwt-auth-style-icon.jwt-auth-social-login {
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+/* ── Divider ───────────────────────────────────────────────────────────── */
+.jwt-auth-divider {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin: 16px 0;
+	color: var(--jwt-muted);
+	font-size: 0.8125rem;
+}
+
+.jwt-auth-divider::before,
+.jwt-auth-divider::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: var(--jwt-border);
+}
+
+/* ── Error ─────────────────────────────────────────────────────────────── */
+.jwt-auth-error {
+	padding: 0.5625rem 0.75rem;
+	margin-bottom: 14px;
+	background: var(--jwt-error-bg);
+	border: 1px solid var(--jwt-error-border);
+	border-radius: 6px;
+	color: var(--jwt-error-text);
+	font-size: 0.8125rem;
+	line-height: 1.45;
+}
+
+/* ── OTP section ───────────────────────────────────────────────────────── */
+.jwt-auth-otp-section {
+	margin-top: 14px;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+	.jwt-auth-firebase-login,
+	.jwt-auth-firebase-register,
+	.jwt-auth-social-login {
+		padding: 16px;
+		border-radius: 6px;
+		box-shadow: none;
+	}
+}
